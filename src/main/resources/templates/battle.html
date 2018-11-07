@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Страница дуэли</title>
+    </head>
+    <body>
+
+<div>
+<table width = "90%">
+<tr>
+<td width = "30%">
+Боец <span th:text="${playerName}"></span><br>
+<!-- текущий уровень жизни <progress th:attr="value=${playerLife}" th:attr="max=${playerLifeCapacity}">
+</progress><br>-->
+текущий уровень жизни <span th:text="${playerLife}"></span><br>
+<table width="100%">
+<tr>
+<td th:width="(${playerLife}*100/${playerLifeCapacity}) +'%'" height="20px" style="background:#fc0">&nbsp</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<br>
+наносимый за один удар урон <span th:text="${playerDamage}"></span>
+</td>
+
+
+<td align=center>
+<form action="/hit"><input type="Submit" value="Удар!"></form>
+</td>
+
+<td width = "30%">
+Противник <span th:text="${enemyName}"></span><br>
+<!--текущий уровень жизни <progress th:attr="value=${enemyLife}" th:attr="max=${enemyLifeCapacity}">
+</progress><br>-->
+текущий уровень жизни <span th:text="${enemyLife}"></span><br>
+<table width="100%">
+<tr>
+<td th:width="(${enemyLife}*100/${enemyLifeCapacity}) + '%'" height="20px" style="background:#3ca">&nbsp</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<br>
+наносимый за один удар урон <span th:text="${enemyDamage}"></span><br>
+</td>
+
+
+
+</tr>
+</table>
+</div>
+
+<div>
+<h3 align="center">Хроника боя</h3>
+<ul>
+<li th:each="message : ${log}" th:text="${message}"></li>
+</ul>
+</div>
+
+
+<hr>
+<p>page: <span th:text="${generationTime}">0</span> ms, db: <span th:text="${dbreq}">0</span> req (<span th:text="${dbTime}">0</span> ms)
+
+
+    </body>
+</html>

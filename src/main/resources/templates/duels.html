@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Страница дуэлей </title>
+    </head>
+    <body>
+
+<h1>Боец <span th:text="${playerName}"></span>, ваш текущий рейтинг - <span th:text="${playerRating}"></span> </h1>
+
+<p>
+Когда будете готовы к бою - жмите <form action="/fight"><input type="Submit" value="начать дуэль"></form>
+
+
+
+<hr>
+<p>page: <span th:text="${generationTime}">0</span> ms, db: <span th:text="${dbreq}">0</span> req (<span th:text="${dbTime}">0</span> ms)
+
+
+    </body>
+</html>

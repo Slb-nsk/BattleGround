@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Ожидание боя </title>
+        <meta http-equiv="Refresh" content="1" />
+    </head>
+    <body>
+
+<p>Ваш противник в этой схватке - <b><span th:text="${enemyName}">сейчас вы его узнаете</span></b>.
+
+<p align=center>
+До начала схватки осталось<br> <font size=+1><span th:text="${time}">30</span></font> секунд.
+
+
+
+<hr>
+<p>page: <span th:text="${generationTime}">0</span> ms, db: <span th:text="${dbreq}">0</span> req (<span th:text="${dbTime}">0</span> ms)
+
+
+    </body>
+</html>

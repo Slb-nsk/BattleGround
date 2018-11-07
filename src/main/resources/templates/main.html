@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Основная страничка игры BattleGround </title>
+    </head>
+    <body>
+<p>Ну что, готовы дуэлировать?
+<ul>
+<li>Сильные и смелые жмут <form action="/duel"><input type="Submit" value="Да, конечно!"></form>
+<li>Трусливые и слабые жмут <form action="/logout"><input type="Submit" value="Выход из игры"></form>
+</ul>
+
+<hr>
+<p>page: <span th:text="${generationTime}">0</span> ms, db: <span th:text="${dbreq}">0</span> req (<span th:text="${dbTime}">0</span> ms)
+
+
+    </body>
+</html>

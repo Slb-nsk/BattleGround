@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Вход в игру BattleGround </title>
+    </head>
+    <body>
+        <div th:if="${error}">
+            Похоже, вы забыли пароль. Попробуйте ещё раз.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form action="/" method="post">
+            <div><label> Имя игрока : <input type="text" name="username"/> </label></div>
+            <div><label> Пароль: <input type="password" name="password"/> </label></div>
+<!--            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/> -->
+            <div><input type="submit" value="Ввести"/></div>
+        </form>
+      <p>Если вы в этой игре впервые, то придумайте себе имя (ещё не использующееся) и пароль, 
+и в игре будет создан игрок с такими именем и начальными параметрами по умолчанию.
+
+<hr>
+<p>page: <span th:text="${generationTime}">0</span> ms, db: <span th:text="${dbreq}">0</span> req (<span th:text="${dbTime}">0</span> ms)
+ 
+    </body>
+</html>
